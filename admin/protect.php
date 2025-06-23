@@ -4,12 +4,12 @@ if (!isset($_SESSION)) {
 }
 
 if (!isset($_SESSION['id'])) {
-    header("Location: ../login.php");
+    header("Location: ../index.php");
     exit();
 }
 
 if ($_SESSION['role'] != 'admin') {
-    header("Location: ../login.php");
+    header("Location: ../index.php");
     exit();
 }
 ?>

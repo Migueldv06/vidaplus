@@ -25,7 +25,7 @@ if ($resultAdmin->num_rows > 0) {
 
 <body>
   <header class="header">
-    <a href="../index.php"><img src="../img/vidaplus.png" alt="Logo Vida+" class="logo"></a>
+    <a href="main.php"><img src="../img/vidaplus.png" alt="Logo Vida+" class="logo"></a>
     <div class="title">Vida+</div>
     <a href="../logout.php" class="logout-button">Sair</a>
   </header>
@@ -35,8 +35,8 @@ if ($resultAdmin->num_rows > 0) {
       <h1>Bem-vindo, <?php echo htmlspecialchars($admin['nome']); ?>!</h1>
 
       <div class="actions">
-        <a href="criar_medico.php" class="btn">Criar Médico</a>
-        <a href="criar_recepcionista.php" class="btn">Criar Recepcionista</a>
+        <a href="criar-medico.php" class="btn">Criar Médico</a>
+        <a href="criar-recepcionista.php" class="btn">Criar Recepcionista</a>
       </div>
     </div>
 
@@ -55,16 +55,15 @@ if ($resultAdmin->num_rows > 0) {
           <li><strong>Matrícula:</strong> <?php echo htmlspecialchars($admin['matricula']); ?></li>
           <br><!-- utilizado para espaçar a opção abaixo, estava muito perto -->
         </ul>
-        <a href="editar_dados.php" class="btn" style="margin-top: 16px;">Editar Seus Dados</a>
+        <a href="editar-dados.php" class="btn" style="margin-top: 16px;">Editar Seus Dados</a>
       </div>
     </div>
   </div>
 
-  <footer style="text-align: center; padding: 20px; background-color: white; font-size: 14px; color: #34495e;">
-    <h2>Contato com a Coordenação</h2>
-    <p>Para qualquer dúvida ou informação adicional, entre em contato pelo e-mail
-      <a href="mailto:coordenacao@institutofederal.edu.br">coordenacao@institutofederal.edu.br</a>
-      ou pelo telefone (11) 1234-5678.
+  <footer>
+    <h2>Contato com o Suporte</h2>
+    <p>Para dúvidas ou informações, entre em contato pelo e-mail
+      <a href="mailto:suporte@vidaplus.com.br">suporte@vidaplus.com.br</a> ou telefone (21) 4002-8922.
     </p>
   </footer>
 </body>

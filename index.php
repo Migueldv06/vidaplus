@@ -46,52 +46,64 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles/login.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles/index.css" />
   <title>Login - Sistema de Saúde</title>
 </head>
 
 <body>
-  <div class="login-container">
+  <header class="header">
+    <a href="index.php"><img src="img/vidaplus.png" alt="Logo Vida+" class="logo-small" /></a>
+    <div class="title">Vida+</div>
+  </header>
+
+  <main class="login-container">
     <h2>Sistema de Saúde</h2>
     <form action="" method="post">
+      <img src="img/vidaplus.png" alt="Logo Vida+" class="logo" />
       <div class="form-group">
         <label for="cpf">CPF</label>
-        <input type="text" id="cpf" name="cpf" maxlength="14" required>
+        <input type="text" id="cpf" name="cpf" maxlength="14" required />
       </div>
       <div class="form-group">
         <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" required>
+        <input type="password" id="senha" name="senha" required />
       </div>
       <button type="submit" class="login-btn">Entrar</button>
     </form>
+
     <div class="register">
       <p>Não tem uma conta?</p>
       <a href="cadastrar.php" class="register-btn">Criar cadastro</a>
     </div>
+
     <div class="footer">
       © 2025 Sistema Vida+
     </div>
-  </div>
-</body>
-</html>
+  </main>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const cpfInput = document.getElementById("cpf");
+  <footer>
+    <h2>Contato com o Suporte</h2>
+    <p>Para dúvidas ou informações, entre em contato pelo e-mail
+      <a href="mailto:suporte@vidaplus.com.br">suporte@vidaplus.com.br</a> ou telefone (21) 4002-8922.
+    </p>
+  </footer>
 
-    cpfInput.addEventListener("input", function () {
-      let value = cpfInput.value.replace(/\D/g, ""); // Remove tudo que não é número
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const cpfInput = document.getElementById("cpf");
 
-      if (value.length > 11) value = value.slice(0, 11); // Limita a 11 dígitos
-
-      // Aplica a máscara
-      value = value.replace(/(\d{3})(\d)/, "$1.$2");
-      value = value.replace(/(\d{3})(\d)/, "$1.$2");
-      value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-
-      cpfInput.value = value;
+      cpfInput.addEventListener("input", function () {
+        let value = cpfInput.value.replace(/\D/g, "");
+        if (value.length > 11) value = value.slice(0, 11);
+        value = value.replace(/(\d{3})(\d)/, "$1.$2");
+        value = value.replace(/(\d{3})(\d)/, "$1.$2");
+        value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+        cpfInput.value = value;
+      });
     });
-  });
-</script>
+  </script>
+</body>
+
+</html>
